@@ -105,11 +105,11 @@ namespace NestedObjectsCreateRepro
 
 			// Used only for EF .NET Core CLI tools (update database/migrations etc.)
 			var builder = new ConfigurationBuilder()
-				//.SetBasePath(Path.Combine(Directory.GetCurrentDirectory()))
-				//.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-				//.AddJsonFile($"appsettings.{env}.json", optional: true)
-				//.AddEnvironmentVariables()
-				;
+				.SetBasePath(Path.Combine(Directory.GetCurrentDirectory()))
+				.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+				.AddJsonFile($"appsettings.{env}.json", optional: true)
+				.AddEnvironmentVariables();
+
 			//if (string.IsNullOrEmpty(env) || env == "Development")
 			//	builder.AddUserSecrets<Startup>();
 			var config = builder.Build();

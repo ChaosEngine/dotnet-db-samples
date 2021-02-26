@@ -32,8 +32,8 @@ namespace ODPSample
     {
       Console.WriteLine("Demo: PL/SQL Associative Array");
 
-      // Connect
-      string connectStr = "User Id=scott;Password=tiger;Data Source=oracle";
+      // Provide password and connect
+      string connectStr = "User Id=scott;Password=<PASSWORD>;Data Source=oracle";
 
       // Setup the Tables for sample
       Setup(connectStr);

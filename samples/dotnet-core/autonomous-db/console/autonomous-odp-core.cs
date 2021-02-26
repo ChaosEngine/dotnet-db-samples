@@ -32,7 +32,7 @@ namespace ODP.NET_Core_Autonomous
             string conString = "User Id=ADMIN;Password=XXXXXXXXXXXXXXXXXXXXXXX;" +
 
             //Enter net service name for data source value
-            "Data Source=dataplayground_low;";
+            "Data Source=dataplayground_low;Connection Timeout=300";
 
             // Set tracing options
             OracleConfiguration.TraceOption = 1;

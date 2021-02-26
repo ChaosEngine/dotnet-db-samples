@@ -29,10 +29,16 @@ namespace ODP.NET_Core_Autonomous
             //Demo: ODP.NET Core application that connects to Oracle Autonomous DB
 
             //Enter user id and password, such as ADMIN user	
-            string conString = "User Id=<USER ID>;Password=<PASSWORD>;" +
+            string conString = "User Id=ADMIN;Password=XXXXXXXXXXXXXXXXXXXXXXX;" +
 
             //Enter net service name for data source value
-            "Data Source=<NET SERVICE NAME>;";
+            "Data Source=dataplayground_low;";
+
+            // Set tracing options
+            OracleConfiguration.TraceOption = 1;
+            OracleConfiguration.TraceFileLocation = @"traces";
+            // Uncomment below to generate trace files
+            OracleConfiguration.TraceLevel = 7;
 
             using (OracleConnection con = new OracleConnection(conString))
             {
@@ -41,7 +47,7 @@ namespace ODP.NET_Core_Autonomous
                     try
                     {
                         //Enter directory where the tnsnames.ora and sqlnet.ora files are located
-                        OracleConfiguration.TnsAdmin = @"<DIRECTORY>";
+                        OracleConfiguration.TnsAdmin = @"wallet";
 
                         //Alternatively, connect descriptor and net service name entries can be placed in app itself
                         //To use, uncomment below and enter the DB machine port, hostname/IP, service name, and distinguished name
@@ -49,7 +55,7 @@ namespace ODP.NET_Core_Autonomous
                         //OracleConfiguration.OracleDataSources.Add("autonomous", "(description=(address=(protocol=tcps)(port=<PORT>)(host=<HOSTNAME/IP>))(connect_data=(service_name=<SERVICE NAME>))(security=(ssl_server_cert_dn=<DISTINGUISHED NAME>)))");                       
                         
                         //Enter directory where wallet is stored locally
-                        OracleConfiguration.WalletLocation = @"<DIRECTORY>";
+                        OracleConfiguration.WalletLocation = @"wallet";
 
                         con.Open();
 

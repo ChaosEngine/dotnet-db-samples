@@ -125,6 +125,7 @@ namespace ODP.NET_CICQN_JSON_21c
         }
     }
 }
+<<<<<<< HEAD
 
 /* Copyright (c) 2021, Oracle and/or its affiliates. All rights reserved. */
  
@@ -144,3 +145,5 @@ namespace ODP.NET_CICQN_JSON_21c
  * limitations under the License.
  *
  *****************************************************************************/
+=======
+>>>>>>> ac09353 (Backmerge origin changes into my fork (#1))
